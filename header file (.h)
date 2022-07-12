@@ -93,7 +93,7 @@ int InstrumentCollection::getheight(node *nnode)
 	else
 		return nnode->height; 
 }
-int InstrumentCollection::getbalance(node *n) )
+int InstrumentCollection::getbalance(node *n) 
 {
 	if (n == NULL) 
 		return 0;
@@ -192,7 +192,7 @@ node *InstrumentCollection::searchInstrumentRecord(node *n, int key)
 	else
 		return NULL;
 }
-node *InstrumentCollection::deleteInstrumentRecord(node *rnode, int key) /
+node *InstrumentCollection::deleteInstrumentRecord(node *rnode, int key) 
 {
 	node *temp; 
 	if (key < rnode->key) 
