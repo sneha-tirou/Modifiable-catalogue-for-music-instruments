@@ -1,0 +1,235 @@
+#include <iostream>
+#include <iomanip>
+#include"instrument.h" // include name of the header file
+using namespace std;
+int main()
+{
+	InstrumentCollection d;
+	instrument instrumentObject(1, "Electric Guitar", "G&L Limited Edition Tribute ASAT Classic Ash Body Electric Guitar Gloss Natural-25000Rs");
+	instrument instrumentObject1(2, "Electric Guitar", "Angelico Premier Series DC Boardwalk Semi-Hollow Electric Guitar with Seymour Duncan Humbuckers Walnut Stain-28000Rs");
+	instrument instrumentObject2(3, "Acoustic Guitar", "Rogue RD80 Dreadnought Acoustic Guitar-70000Rs");
+	instrument instrumentObject3(4, "Acoustic Guitar", "Rogue RG-624 Left-Handed Dreadnought Acoustic Guitar NaturaL-80000Rs");
+	instrument instrumentObject4(5, "Bass", "Mitchell MB200 Modern Rock Bass with Active EQ Gun Metal Gray-37000Rs");
+	instrument instrumentObject5(6, "Electric Bass", "Tobias Toby Standard-IV Electric Bass Ebony-16000Rs");
+	instrument instrumentObject6(7,"drum set", "Rogue 5-Piece Complete Drum Set Wine Red-12000Rs");
+	instrument instrumentObject7(8,"drums", "Orange County Drum & Percussion Maple Snare 7 x 13, Natural Ash-87000Rs");
+	instrument instrumentObject8(9,"Piano", "Williams Rhapsody 2 88-Key Console Piano Ebony Polish-34000Rs");
+	instrument instrumentObject9(10,"Piano", "Suzuki MDG-330 Mini Grand Piano-78000Rs");
+	instrument instrumentObject10(11,"Violin", "Primavera 90 - 4/4 Violin Outfit VF002N incl. Case and Bow-99000Rs");
+	instrument instrumentObject11(12,"Viola", "Primavera 100 - 14 Viola Set inkl. Case und Bogen-87000Rs");
+	instrument instrumentObject12(13,"cello", "Eastman Westbury Cello 4/4-25000Rs");
+	instrument instrumentObject13(14,"Tuner", "AT-300B Clip-on Guitar & Instrument Tuner, LED Display-34000Rs");
+	instrument instrumentObject14(15,"Soprano Recorder (Modern)", "Yamaha YRS-23 Recorder-2000Rs");
+	instrument instrumentObject15(16, "Flute", "Yamaha YFL-212 Querflöte-3000Rs");
+	instrument instrumentObject16(17, "Tuba", "Jupiter 378 Series 3-Valve ¾ BBb Tuba 378 L Lacquers-100000Rs");
+	instrument instrumentObject17(18, "Ukulele", "Fender Venice ukulele-3500Rs");
+	instrument instrumentObject18(19, "Xylophone", "Stagg XYLO-SET 37-Key Xylophone-300000Rs");
+	instrument instrumentObject19(20, "Sitar", "High Class West Rajasthani Musical String Sindhi Sitar Instrument Sarangi Sarnga-5000Rs");
+	instrument instrumentObject20(21, "Maracas", "Beistle 8 Inch Fiesta Maracas-80000Rs");
+	instrument instrumentObject21(22, "Mouth Organ", "SEYDEL Blues Classic 1847 Harmonica-2000Rs");
+	instrument instrumentObject22(23, "Banjo", "Resoluute 5 String Resonator Banjo-16000Rs");
+	instrument instrumentObject23(24, "Bag pipes", "McWilliams Professional Scottish Highland Bagpipe-8000Rs");
+	instrument instrumentObject24(25, "Harmonica", "Hohner Golden Melody Harmonica-1500Rs");
+	instrument instrumentObject25(26, "Harp", "Roosebeck Heather TM Harp-9000Rs");
+	instrument instrumentObject26(27, "Bongo Drums", "Meinl Percussion Journey Series-500Rs");
+	instrument instrumentObject27(28, "Tambourine", "CP by LP Tunable Tambourine-1000Rs");
+	instrument instrumentObject28(29, "Piccolo", "Yamaha YPC-62R Professional Piccolo-30000Rs");
+	instrument instrumentObject29(30, "Viola", "Eastman Strings-900000Rs");
+	d.insertInit(1, instrumentObject);
+	d.insertInit(2, instrumentObject1);
+	d.insertInit(3, instrumentObject2);
+	d.insertInit(4, instrumentObject3);
+	d.insertInit(5, instrumentObject4);
+	d.insertInit(6, instrumentObject5);
+	d.insertInit(7, instrumentObject6);
+	d.insertInit(8, instrumentObject7);
+	d.insertInit(9, instrumentObject8);
+	d.insertInit(10, instrumentObject9);
+	d.insertInit(11, instrumentObject10);
+	d.insertInit(12, instrumentObject11);
+	d.insertInit(13, instrumentObject12);
+	d.insertInit(14, instrumentObject13);
+	d.insertInit(15, instrumentObject14);
+	d.insertInit(16, instrumentObject15);
+	d.insertInit(17, instrumentObject16);
+	d.insertInit(18, instrumentObject17);
+	d.insertInit(19, instrumentObject18);
+	d.insertInit(20, instrumentObject19);
+	d.insertInit(21, instrumentObject20);
+	d.insertInit(22, instrumentObject21);
+	d.insertInit(23, instrumentObject22);
+	d.insertInit(24, instrumentObject23);
+	d.insertInit(25, instrumentObject24);
+	d.insertInit(26, instrumentObject25);
+	d.insertInit(27, instrumentObject26);
+	d.insertInit(28, instrumentObject27);
+	d.insertInit(29, instrumentObject28);
+	d.insertInit(30, instrumentObject29);
+	int deletingInstrument ;
+	int s ,no,no1;
+	int ch,ch1;
+	int s1, nox, no2;
+	char nam1[20], detail1[50];
+	int a;
+	char nam[20] ,detail[50];
+	int ch2=1;
+	
+	
+
+	do
+	{
+		cout<<"-------------------------------------- AU MUSIC INSTRUMENTS -----------------------------------------";
+		cout<<"\n \n ARE YOU A \n 1.STAFF \n 2.CUSTOMER \n\n ";
+		cin>>ch1;
+		
+		if(ch1==2)
+		{
+			while(ch!=3)
+			{
+				cout<<" \n 1.PRINT DETAILS OF ALL THE INSTRUMENTS \n 2.SEARCH THE DETAILS OF AN INSTRUMENT \n 3.EXIT \n please enter your choice :";
+				cin>>ch;
+				switch(ch)
+				{
+					case 1 :
+					{
+						cout << "\n======== Printing all the Instrument Detail==========\n";
+						d.displayInstruments();
+						cout << "\n-------------------------------------------------------------------------------------------------\n";
+						break;
+					}
+					case 2 :
+					{
+						cout<<" \n Enter the number of the instrument to search : ";
+						cin>>s;
+						cout << "\n======== Searching Detail For the entered Instrument " << s << " ==========\n";
+						node *instrumentDetail = d.searchInstrument(s);
+						if (instrumentDetail != NULL)
+							instrumentDetail->print();
+						else
+							cout << "\n======== THIS INSTRUMENT IS NOT PRESENT IN OUR CATALOUGE, PLEASE ENTER A VALID ENTRY " << searchingElement << " ==========\n";
+						temporyNode = NULL;
+						break;
+					}
+					case 3:
+						break;
+					default:
+						cout<<"Wrong Choice"<<endl;
+				}
+			}
+		}
+		
+		else 
+		{
+			while(ch!=6)
+			{
+				cout<<" Please enter your choice : \n 1.PRINT DETAILS OF ALL THE INSTRUMENTS \n 2.SEARCH THE DETAILS OF AN INSTRUMENT \n 3.DELETE AN INSTRUMENT FROM THE RECORD \n 4.INSERT A NEW INSTRUMENT INTO RECORDS \n 5.UPDATE AN INSTRUMENT \n 6.EXIT \n ";
+				cin>>ch;
+				switch(ch)
+				{
+					case 1 :
+					{
+						cout << "\n======== Printing all the Instrument Detail==========\n";
+						d.displayInstruments();
+						cout << "\n-------------------------------------------------------------------------------------------------\n";
+						break;
+					}
+					case 2 :
+					{
+						cout<<" \n Enter the number of the instrument to search : ";
+						cin>>s;
+						cout << "\n======== Searching Instrument Detail For Instrument " << s << " ==========\n";
+						node *instrumentDetail = d.searchInstrument(s);
+						if (instrumentDetail != NULL)
+							instrumentDetail->print();
+						else
+							cout << "\n======== THIS INSTRUMENT IS NOT PRESENT IN OUR CATALOUGE, PLEASE ENTER A VALID ENTRY " << searchingElement << " ==========\n";
+						temporyNode = NULL;
+						break;
+					}
+					case 3:
+					{
+						cout<<"enter the number of the instrument to delete from the records : ";
+						cin>>deletingInstrument;
+						node *instrumentDetail = d.searchInstrument(deletingInstrument);
+					if (instrumentDetail != NULL)
+					{
+						cout << "\n======== Deleting Instrument Detail for Instrument " << deletingInstrument << "==========\n";
+						d.deleteInstrument(deletingInstrument);
+						cout << "\n======== Again Printing Instrument Detail After Deleting Instrument " << deletingInstrument << "==========\n";
+						d.displayInstruments();
+						cout << "\n-------------------------------------------------------------------------------------------------\n";
+					}
+					else
+						cout << "\n======== THIS INSTRUMENT IS NOT PRESENT IN OUR CATALOUGE, PLEASE ENTER A VALID ENTRY " << searchingElement << " ==========\n";
+					temporyNode = NULL;
+					
+					break;
+					}
+					case 4:
+					{
+						cout<<"Enter number of instrument to insert ";
+						cin>>no;
+						node *instrumentDetail = d.searchInstrument(no);
+						no1 = no;
+						if (instrumentDetail != NULL)
+						{
+							cout << "\n======== THIS INSTRUMENT IS ALREADY PRESENT IN OUR CATALOUGE!!!! \n\n " ;
+						}
+						else if (instrumentDetail == NULL)
+						{
+							cout<<"enter name of instrument";
+							cin>>nam;
+							cout<<"enter details of instrument(Model and price seperated by a '-')";
+							cin>>detail;
+							instrument instrumentObjectx(no, nam, detail);
+							d.insertInit(no1, instrumentObjectx);
+						}
+						break;
+					}
+					case 5:
+					{
+						cout<<"\n Enter the number of the instrument to be modified/updated: ";
+						cin>>s1;
+						node *instrumentDetail=d.searchInstrument(s1);
+						if (instrumentDetail != NULL)
+						 {
+						  d.deleteInstrument(s1);
+						  cout<<"Enter new number of the new instrument";
+						  cin>>no2;
+						  nox=no2;
+						  cout<<"Enter the name of the new instrument";
+						  cin>>nam1;
+						  cout<<"Enter the details of the new instrument";
+						  cin>>detail1;
+						  instrument instrumentObjecty(nox , nam1 , detail1);
+						  d.insertInit(no2,instrumentObjecty);
+						  cout << "\n========Printing the details of the instrument after the updation has took place" << deletingInstrument << "==========\n";
+						  d.displayInstruments();
+						  cout << "\n-------------------------------------------------------------------------------------------------\n";
+						 }
+						 else
+						 	cout << "\n========THIS INSTRUMENT IS NOT PRESENT IN OUR CATALOUGE, PLEASE ENTER A VALID ENTRY!" << searchingElement <<"==========\n";
+						 temporyNode=NULL;
+						 break;
+					}
+					case 6:
+						{
+							break;
+						}
+					default:
+					cout<<"Invalid choice, Please enter a valid entry!"<<endl;
+				}
+			}
+		}
+		system("cls");
+			cout<<"Please Enter Your Choice \n 1.Continue \n 2.Exit \n ";
+			cin>>ch2;
+		system("cls");
+	}while(ch2==1);
+	cout<<"Thank You For Using Our Services! :) ";
+	cout<<"\n\n DONE BY :\n";
+	cout<<"**SNEHA TIROUMOUROUGANE**\n";
+	
+	return 0;
+}
+
